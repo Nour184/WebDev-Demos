@@ -1,0 +1,129 @@
+/* Your provided styles */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex; /* Added */
+  flex-direction: column; /* Added */
+  align-items: center; /* Added */
+  gap: 2rem; /* Added this to create space */
+  width: 100%; /* Added to ensure it fills container */
+}
+
+html,
+body {
+  background-color: #3a313a; /* Deep purple/brown from shadows */
+  color: #f2e9e4; /* Warm off-white for text */
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #e87a31; /* Bright warm orange for accent */
+}
+
+/* Added styles to make the app look complete */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 2rem;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* Styles for the input form */
+.input-area {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #5e454b; /* Muted red/brown for cards */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #f2e9e4; /* Warm off-white */
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.input-area label {
+  text-align: right;
+  font-weight: 600;
+  padding-top: 0.5rem; /* Align with input center */
+}
+
+.input-area input {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #4a3a3f;
+  background-color: #4a3a3f; /* Darker red/brown for inputs */
+  color: #f2e9e4; /* Warm off-white */
+  font-size: 1rem;
+}
+
+.input-area input::placeholder {
+  color: #999;
+}
+
+.input-area button {
+  grid-column: 2 / 3; /* Place button in the second column */
+  justify-self: start; /* Align button to the left */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background-color: #e87a31; /* Bright warm orange for accent */
+  color: #3a313a; /* Dark background color for contrast */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.input-area button:hover {
+  background-color: #ff9a57; /* Lighter orange for hover */
+}
+
+/* Styles for the movie list */
+.movies-list {
+  display: flex; /* Changed from grid to flex */
+  flex-wrap: wrap; /* This makes the items start a new row when full */
+  justify-content: center; /* Center the cards in the container */
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.movie-card {
+  background-color: #5e454b; /* Muted red/brown for cards */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #f2e9e4; /* Warm off-white */
+  text-align: left;
+  transition: transform 0.2s;
+
+  /* These properties control the size in a flex layout */
+  flex-basis: 280px; /* Each card will try to be 280px wide */
+  flex-grow: 1; /* Cards can grow to fill extra space */
+  max-width: 350px; /* But they won't grow too large */
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #e87a31; /* Bright warm orange for accent */
+}
+
+.movie-card p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}

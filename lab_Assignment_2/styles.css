@@ -1,0 +1,71 @@
+#display {
+     
+    box-sizing: border-box; 
+    width: 25%; 
+    padding: 20px;
+    align-items: center;
+    background-color: #333333; 
+    border: none;
+    border-radius: 10px; 
+    margin-bottom: 20px;
+    text-align: right;
+    color: white; 
+    
+}
+
+.button_cat_1 {
+    width: 60px;         
+    height: 60px;         
+    border-radius: 50%;   
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+    background-color: white; /* Light gray, almost white */
+    color: black;
+}
+
+
+.button_cat_3{
+    width: 60px;         
+    height: 60px;         
+    border-radius: 50%;   
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+    background-color: rgb(241, 127, 40); 
+    color: white;
+}
+
+.button_cat_2{
+    width: 60px;         
+    height: 60px;         
+    border-radius: 50%;   
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out; 
+    background-color:  #78786a;
+    color: white;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 280px; 
+}
+
+.backgr{
+
+}
