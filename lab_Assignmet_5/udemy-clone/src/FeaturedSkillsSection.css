@@ -1,0 +1,192 @@
+/* --- SKILLS SECTION STYLES --- */
+.skills-section {
+    padding: 0 24px;
+    margin-bottom: 40px;
+    /* NEW: Use Flex on large screens to put text next to cards */
+    display: flex; /* Default: column on mobile */
+    flex-direction: column; 
+    gap: 32px; /* Space between text and cards */
+}
+@media (min-width: 200px) { /* Use a breakpoint to activate the horizontal layout */
+    .skills-section {
+        flex-direction: row; /* Text and Cards side-by-side */
+        align-items: flex-start; /* Align content to the top */
+        gap: 32px;
+    }
+}
+.skills-heading-area {
+    margin-bottom: 32px; /* Keep this for mobile/vertical layout */
+    max-width: 450px;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    border-radius: 8px;
+    color: #1c1d1f;
+    /* NEW: Flex control on desktop */
+    flex-shrink: 0; /* Ensures the text section doesn't shrink */
+}
+.skills-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1d1f;
+}
+@media (min-width: 768px) {
+    .skills-title { font-size: 40px; }
+    .skills-heading-area {
+        border: none;
+        padding: 0;
+        /* Remove margin-bottom on desktop, as gap handles spacing */
+        margin-bottom: 0;
+    }
+}
+.skills-description {
+    font-size: 16px;
+    margin: 0;
+    color: #1c1d1f;
+}
+.cards-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    /* REMOVE padding here that was added for buttons. 
+       The main section padding (24px) handles the left alignment of the cards */
+    padding: 0; 
+
+    /* NEW: On desktop, this takes up the remaining space */
+    flex-grow: 1; 
+    overflow: hidden; /* Important for containing the scrolled content */
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+
+    gap: 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    padding-right: 24px; /* Matches the main section padding */
+}
+.card-wrapper {
+    flex: 0 0 auto; 
+    width: 250px; 
+    scroll-snap-align: start;
+    /* FIX: white-space: normal is needed here because the parent is nowrap, 
+       otherwise text inside the card would be a single line. */
+    white-space: normal; 
+}
+.cards-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+.topic-card {
+    border: 1px solid #d1d7dc;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+   /*height: 100%; */  /* Ensure all cards are same height */
+    display: flex;
+    flex-direction: column;
+}
+.topic-card:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.08);
+}
+.card-image-placeholder {
+   height: 250px; /* Increase this */
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   border-bottom: none;
+}
+.card-image-content {
+    width: 180px;
+    height: 180px;
+    /* Add object-fit if your images aren't all the same aspect ratio */
+    object-fit: contain;
+}
+.card-content {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-stats {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1c1d1f;
+    margin-bottom: 8px;
+}
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.card-link {
+    font-size: 14px;
+    color: #5624d0;
+    text-decoration: none;
+    font-weight: 700;
+}
+.card-arrow {
+    font-size: 16px;
+    color: #5624d0;
+    font-weight: 900;
+}
+/* CAROUSEL CONTROLS */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #1c1d1f;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.08);
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f7f9fa;
+    border-color: #d1d7dc;
+}
+.carousel-btn:not(:disabled):hover {
+    background-color: #f5f5f5;
+}
+.btn-left {
+   left: 24px;
+}
+.btn-right {
+   right: 24px;
+}
+@media (max-width: 899px) {
+    .carousel-btn { display: none; }
+}
+/* Hide controls on small screens */
+/*@media (max-width: 767px) {
+    .carousel-btn { display: none; }
+    .cards-scroll-wrapper { padding: 0; }
+}*/

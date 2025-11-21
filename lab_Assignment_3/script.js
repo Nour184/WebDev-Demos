@@ -13,7 +13,6 @@ completed_button.addEventListener('click', showCompleted);
 let todo_ArrayList = [];
 
 
-//  Generic render function (optionally filtered)
 function render_TodoList(filter = "all") {
     todo_list.innerHTML = '';
 

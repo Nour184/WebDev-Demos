@@ -1,0 +1,183 @@
+.card-wrapper {
+
+    flex: 0 0 auto;
+
+    width: 250px;
+
+    scroll-snap-align: start;
+
+}
+
+/* --- TEMPORARY DEBUG CSS --- */
+
+.card-wrapper {
+
+    /* Set a visible boundary and ensure block behavior is ignored */
+
+    background-color: yellow !important;
+
+    width: 250px !important;
+
+    display: block !important; /* Test if forcing block then flex is the issue */
+
+    /* Remove 'display: block !important' if it breaks flex */
+
+}
+
+/* This targets the inner card to ensure it doesn't expand past 250px */
+
+.topic-card {
+
+    max-width: 250px !important;
+
+}
+
+
+
+.topic-card {
+
+    border: 1px solid #d1d7dc;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: box-shadow 0.2s;
+
+    height: 100%; /* Ensure all cards are same height */
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+.topic-card:hover {
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.08);
+
+}
+
+
+
+.card-image-placeholder {
+
+    height: 150px;
+
+    background-color: #f7f9fa;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-bottom: 1px solid #d1d7dc;
+
+}
+
+
+
+.card-image-content {
+
+    width: 100px;
+
+    height: 100px;
+
+}
+
+
+
+.card-content {
+
+    padding: 16px;
+
+    flex-grow: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+
+.card-stats {
+
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    background-color: #ecf0f1;
+
+    border-radius: 4px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #1c1d1f;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.card-title {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin: 0 0 12px 0;
+
+}
+
+
+
+.card-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 10px;
+
+}
+
+
+
+.card-link {
+
+    font-size: 14px;
+
+    color: #5624d0;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+}
+
+
+
+.card-arrow {
+
+    font-size: 16px;
+
+    color: #5624d0;
+
+    font-weight: 900;
+
+}
